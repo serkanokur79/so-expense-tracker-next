@@ -48,10 +48,10 @@ const SummaryBoxes = async () => {
                 </CardHeader>
                 <CardContent className={`text-md 2xl:text-3xl font-bold ${info.value ? info.value > 0 ? 'text-green-700' : 'text-red-600' : ''}`}>
                     {info.value ? `${info.value > 0 ? '' : '-'}` : ''}${addCommas(Math.abs(info.value ?? 0))}
-                    <span className="text-sm align-top"> *</span>
+                    <span className="hidden xl:flex text-sm align-top"> *</span>
                 </CardContent>
                 <CardFooter>
-                    <div className="text-xs text-gray-500 -mx-2 xl:mx-1">
+                    <div className="hidden xl:flex text-xs text-gray-500 -mx-2 xl:mx-1">
                         *{info.number} {info.numberText.toLowerCase()}
                     </div>
                 </CardFooter>

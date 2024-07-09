@@ -13,7 +13,7 @@ const TransactionsList = async () => {
     console.log(transactions);
 
     return (
-        <div className="flex flex-col w-full p-2">
+        <div className="flex flex-col w-full xl:p-2">
             {transactions && balance && <TransactionsTable data={transactions ?? []} balance={balance ?? 0} />}
             {!transactions && !balance &&
                 <div>

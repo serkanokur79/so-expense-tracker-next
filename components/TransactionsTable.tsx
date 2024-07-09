@@ -40,24 +40,24 @@ export const TransactionsTable: React.FC<TransactionsTableProps> = ({ data, bala
     }
 
     return (
-        <Card className="w-full shadow-md shadow-black/40">
+        <Card className="w-full shadow-md shadow-black/40 p-0">
             <CardHeader className="flex flex-row justify-between">
                 <h1>Transactions</h1>
                 <AddTransactionButton />
             </CardHeader>
 
-            <CardContent className="w-full">
-                <Table className="w-full">
+            <CardContent className="p-0 xl:p-2 w-full">
+                <Table >
                     {/* <TableCaption>A list of your incomes and expenses</TableCaption */}
                     <TableHeader>
                         <TableRow>
                             <TableHead >Id</TableHead>
                             <TableHead>Text</TableHead>
-                            <TableHead> Date</TableHead>
-                            <TableHead> Time</TableHead>
+                            <TableHead> Date/Time</TableHead>
+                            {/* <TableHead> Time</TableHead> */}
                             <TableHead >Type</TableHead>
                             <TableHead className="text-right">Amount</TableHead>
-                            <TableHead className="w-1 p-0"></TableHead>
+                            <TableHead className="w-1 p-0 hidden xl:flex"></TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -69,14 +69,13 @@ export const TransactionsTable: React.FC<TransactionsTableProps> = ({ data, bala
                                     year: 'numeric',
                                     month: 'long',
                                     day: 'numeric',
-                                }).format(dat.createdAt)}</TableCell>
-                                <TableCell>{new Intl.DateTimeFormat('en', {
+                                }).format(dat.createdAt)} {new Intl.DateTimeFormat('en', {
                                     timeStyle: 'short',
                                 }).format(dat.createdAt)}</TableCell>
                                 <TableCell className={`${dat.amount > 0 ? 'text-green-500' : 'text-red-500'}`}>{dat.amount > 0 ? 'Income' : 'Expense'}</TableCell>
                                 <TableCell className={`${dat.amount > 0 ? 'text-green-500' : 'text-red-500'} text-right`}>$ {addCommas(Math.abs(dat.amount))}</TableCell>
-                                <TableCell className={`w-1 p-0 ${dat.amount > 0 ? 'bg-green-500' : 'bg-red-500'}`}></TableCell>
-                                <TableCell ><Button variant="ghost" className="text-red-500"
+                                <TableCell className={`hidden xl:flex xl:w-1 p-0 ${dat.amount > 0 ? 'bg-green-500' : 'bg-red-500'}`}></TableCell>
+                                <TableCell ><Button variant="ghost" className="text-red-500 w-2"
                                     onClick={() => handleDelete(dat.id)}
                                 >X</Button></TableCell>
                             </TableRow>
@@ -84,10 +83,10 @@ export const TransactionsTable: React.FC<TransactionsTableProps> = ({ data, bala
                     </TableBody>
                     <TableFooter>
                         <TableRow>
-                            <TableCell colSpan={4}></TableCell>
+                            <TableCell colSpan={3}></TableCell>
                             <TableCell >Total</TableCell>
                             <TableCell className="text-right">$ {addCommas(balance ?? 0)}</TableCell>
-                            <TableCell className="bg-gray-50"></TableCell>
+                            <TableCell className="bg-gray-50 hidden xl:flex"></TableCell>
                             <TableCell className="bg-gray-50"></TableCell>
                         </TableRow>
                     </TableFooter>
