@@ -12,10 +12,17 @@ const TransactionsList = async () => {
     const { balance } = await getUserBalance();
     console.log(transactions);
 
-    return (<div className="flex flex-col w-full p-2">
-
-        {transactions && balance && <TransactionsTable data={transactions ?? []} balance={balance ?? 0} />}
-    </div>);
+    return (
+        <div className="flex flex-col w-full p-2">
+            {transactions && balance && <TransactionsTable data={transactions ?? []} balance={balance ?? 0} />}
+            {!transactions && !balance &&
+                <div>
+                    <Button onClick={() => AddTransactionButton()}>Add Transaction</Button>
+                    <AddTransactionButton />
+                </div>
+            }
+        </div>
+    );
 }
 
 export default TransactionsList;

@@ -35,7 +35,7 @@ const AddTransactionButton = () => {
 
     }
     return (<>
-        <p>{isMobile ? 'm' : isTablet ? 't' : 'd'}</p>
+
         <Sheet open={open} onOpenChange={setOpen}>
             <Button onClick={() => setOpen(true)}>Add Transaction</Button>
             <SheetContent side={isMobile || isTablet ? 'bottom' : 'right'}>
