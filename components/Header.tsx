@@ -19,7 +19,7 @@ const Header = () => {
                     <SignInButton />
                 </SignedOut>
                 <SignedIn>
-                    <UserButton afterSignOutUrl="/" />
+                    <UserButton />
                 </SignedIn>
 
             </div>
