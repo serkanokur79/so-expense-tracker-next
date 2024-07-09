@@ -62,7 +62,7 @@ export const TransactionsTable: React.FC<TransactionsTableProps> = ({ data, bala
                     </TableHeader>
                     <TableBody>
                         {data?.map((dat, idx) => (
-                            <TableRow key={dat.id} onTouchMove={(e) => { e.preventDefault(); console.log(dat.id); setSelectedTransactionId(dat.id) }}>
+                            <TableRow key={dat.id} >
                                 <TableCell className="font-medium">{idx + 1}</TableCell>
                                 <TableCell>{dat.text}</TableCell>
                                 <TableCell>{new Intl.DateTimeFormat('en', {
