@@ -1,2 +1,2 @@
 
-![Screenshot_2][https://github.com/serkanokur79/](https://github.com/serkanokur79/so-expense-tracker-next/blob/main/so-expense-tracker-vercel-app.png)
+![Screenshot_2][https://github.com/serkanokur79/so-expense-tracker-next/blob/main/so-expense-tracker-vercel-app.png]
