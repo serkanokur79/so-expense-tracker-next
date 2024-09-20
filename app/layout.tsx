@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "So Xpense Trackr",
@@ -24,9 +25,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={roboto.className}>
-          <main className="flex flex-col h-[calc(100vh)] w-full">
+          <main className="flex flex-col h-[calc(100dvh)] min-h-[calc(100dvh)] w-full">
             <Header />
             {children}
+            <Footer />
           </main>
           <ToastContainer />
         </body>

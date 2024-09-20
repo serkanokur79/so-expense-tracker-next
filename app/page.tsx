@@ -13,7 +13,7 @@ const HomePage = async () => {
     return <Guest />
   }
 
-  return (<section className="flex flex-col items-start justify-start w-full max-w-2xl 2xl:max-w-7xl mx-auto p-4">
+  return (<section className="flex flex-col items-start justify-start w-full max-w-2xl 2xl:max-w-7xl mx-auto p-4 flex-1">
     <h2 className="text-2xl">Welcome {user.firstName}</h2>
     <div className="flex flex-row gap-4 w-full p-4">
       <SummaryBoxes />
