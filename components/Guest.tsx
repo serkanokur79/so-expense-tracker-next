@@ -1,15 +1,20 @@
-import { SignInButton } from "@clerk/nextjs";
-import { Button } from "./ui/button";
+
+import Hero from "./Hero";
+import Features from "./Features";
+import PricingSection from "./Pricing";
+import Testimonials from "./Testimonial";
 
 type Props = {
 
 }
 export const Guest = ({ }: Props) => {
     return (
-        <div className="flex flex-col items-center justify-center">
-            <h1>Welcome</h1>
-            <p>Please sign in to manage your expenses</p>
-            <Button><SignInButton /></Button>
-        </div>
-    );
+
+        <main>
+            <Hero />
+            <Features />
+            <PricingSection />
+            <Testimonials />
+        </main>
+    )
 }
